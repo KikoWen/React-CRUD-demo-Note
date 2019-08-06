@@ -1,33 +1,75 @@
-.App {
-  text-align: center;
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css';
+body{
+	background: repeating-linear-gradient(
+		45deg,
+	  	rgba(255,105,180,0.1),
+	  	rgba(255,105,180,0.1) 1em,
+	  	rgba(255,105,180,0.2) 1em,
+	 	rgba(255,105,180,0.2) 2em
+	);
+	min-height: 100vh;
+}
+.todos{
+	display: flex;
+	flex-wrap: wrap;
+}
+.todo{
+	flex: 0 0 15em;
+	border:thin rgb(255,105,180) solid;
+	border-radius: 0.5em;
+	margin:1em;
+	background-color: #fff;
+	position: relative;
+}
+.todo:after{
+	content:'';
+	display: block;
+	padding-top: 100%;
+}
+.todo-body{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left:0;
+	padding:1em;
+	box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.todo-remove{
+	color: rgb(255,105,180);
+	font-size: 1em;
+	position: absolute;
+	top:0.5em;
+	right:0.5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.todo-content{
+	margin-top: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-priority{
+	text-align: right;
+	font-size: 0.8em;
+	color: rgb(255,105,180);
+	font-style: italic;
+	position: absolute;
+	
+	right:1rem;
+	bottom: 1rem;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn.btn-primary,.btn.btn-primary:hover,.btn.btn-primary:active:focus{
+	background-color: rgb(255,105,180);
+	border-color:rgb(255,105,180);
+	box-shadow: none !important;
+
+
 }
+.form-control:focus{
+	border-color:rgb(255,105,180);
+	box-shadow: none;
+}
+
